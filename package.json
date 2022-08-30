@@ -11,15 +11,13 @@
     "react-scripts": "5.0.1",
     "react-icons": "^4.3.1",
     "web-vitals": "^2.1.4",
-    "inputmask": "latest",
     "lightgallery": "latest",
-    "nouislider": "latest",
-    "smooth-scroll": "latest",
-    "swiper": "latest",
-    "tippy.js": "latest",
     "node-sass": "^7.0.1",
     "sass": "latest",
-    "sass-loader": "latest"
+    "sass-loader": "latest",    
+    "firebase": "^9.9.3",
+    "react-firebase-hooks": "^5.0.3",
+    "react-router-dom": "^6.3.0"
   },
   "scripts": {
     "start": "react-scripts start",

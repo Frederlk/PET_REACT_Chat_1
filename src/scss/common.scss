@@ -1,1 +1,17 @@
 // Заголовки, общие БЄМ блоки и проче...
+%text_01 {
+    font-size: rem(18);
+    line-height: math.div(23, 18);
+    font-weight: 500;
+}
+
+%text_02 {
+    font-size: rem(12);
+    line-height: math.div(18, 12);
+}
+
+%text_03 {
+    font-weight: 500;
+    font-size: rem(14);
+    line-height: math.div(18, 14);
+}

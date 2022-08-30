@@ -7,18 +7,33 @@
 //&display=swap - добавить при подключении через плагин
 
 // Подключить если есть локальные файлы шрифтов
-//@import "fonts/fonts";
+@import "fonts/fonts";
 
 // Подключение иконочных шрифтов ==============================================================================================================================================================================================================================================================================
 // Подключить если есть файл иконочного шрифта
-//@import "fonts/icons";
+@import "fonts/icons";
 
 // Шрифт по умолчанию ==============================================================================================================================================================================================================================================================================
-$fontFamily: "";
-$fontSize: rem(14); // где 14(px) - размер шрифта по умолчанию из макета
+$fontFamily: "PlusJakartaSans";
+$fontSize: rem(16); // где 14(px) - размер шрифта по умолчанию из макета
 
 // Основные цвета
-$mainColor: #000; // Цвет шрифта по умолчанию
+$text_01: #1b1a57;
+$text_02: #4f5e7b;
+$text_03: #a1a1bc;
+$light_01: #f9f9f9;
+$light_02: #f7f7f7;
+$light_03: #bdbdbd;
+$dark_01: #333333;
+$black: #000;
+$white: #fff;
+$yellow: #f2c94c;
+$orange: #f2994a;
+$red: #eb5757;
+$green: #4ce417;
+$blue: #2f80ed;
+
+$mainColor: $text_01; // Цвет шрифта по умолчанию
 
 // НАСТРОЙКИ ===============================================================================================================================================================================================================================================================================================
 // Минимальная ширина страницы
@@ -26,7 +41,7 @@ $minWidth: 320;
 // Ширина полотна (макета)
 $maxWidth: 1920;
 // Ширина ограничивающего контейнера (0 = нет ограничения)
-$maxWidthContainer: 1170;
+$maxWidthContainer: 970;
 // Общий отступ у контейнера
 // (30 = по 15px слева и справа, 0 = нет отступа)
 $containerPadding: 30;
@@ -61,10 +76,12 @@ body {
 
 // Оболочка ============================================================================================================================================================================================================================================================================================================================================================================================================================================
 .wrapper {
+    position: relative;
     min-height: 100%;
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    background: linear-gradient(180deg, #ffffff 0%, #f4f4f4 100%);
     // Прижимаем footer
     > main {
         flex: 1 1 auto;
@@ -82,42 +99,15 @@ body {
 Например header__container, main__container и т.д.
 Снипет (HTML): cnt
 */
-@if ($responsiveType==1) {
-    // Отзывчивая
-    [class*="__container"] {
-        @if ($maxWidthContainer>0) {
-            max-width: rem($maxWidthContainer);
-            box-sizing: content-box;
-            margin: 0 auto;
-        }
-        @if ($containerPadding>0) {
-            padding: 0 rem(math.div($containerPadding, 2));
-        }
-    }
-} @else {
-    // По брейк-поинтам
-    [class*="__container"] {
+// Отзывчивая
+[class*="__container"] {
+    @if ($maxWidthContainer>0) {
+        max-width: rem($maxWidthContainer);
+        box-sizing: content-box;
         margin: 0 auto;
-        @if ($maxWidthContainer>0) {
-            max-width: rem($maxWidthContainer);
-            box-sizing: content-box;
-        } @else {
-            @if ($containerPadding>0) {
-                padding: 0 rem(math.div($containerPadding, 2));
-            }
-        }
-        @media (max-width: $pc) {
-            max-width: rem(970);
-        }
-        @media (max-width: $tablet) {
-            max-width: rem(750);
-        }
-        @media (max-width: $mobile) {
-            max-width: none;
-            @if ($containerPadding>0 and $maxWidthContainer>0) {
-                padding: 0 rem(math.div($containerPadding, 2));
-            }
-        }
+    }
+    @if ($containerPadding>0) {
+        padding: 0 rem(math.div($containerPadding, 2));
     }
 }
 
@@ -134,3 +124,7 @@ body {
 
 // Подключение стилей отдельных страниц
 @import "home";
+
+.page {
+    padding-top: rem(80);
+}

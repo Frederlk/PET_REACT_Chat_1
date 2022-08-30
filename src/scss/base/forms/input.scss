@@ -4,22 +4,29 @@ input[type="text"],
 input[type="email"],
 input[type="tel"],
 textarea {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 .input {
-	border-radius: 0 !important;
-	width: 100%;
-	display: block;
-	padding: 0px 20px;
-	border: 1px solid #eee;
-	&._focus {
-	}
-	&._error {
-	}
+    width: 100%;
+    display: block;
+    padding: 0px rem(15);
+    @extend %text_02;
+    color: rgb(27, 26, 87, 0.5);
+    background-color: $white;
+    transition: color 0.3s ease 0s;
+    box-shadow: 0px rem(4) rem(32) rgba(70, 96, 135, 0.2);
+    min-height: rem(40);
+    border-radius: rem(8);
+    &:focus {
+        color: $mainColor;
+    }
 }
 textarea.input {
-	resize: none;
-	padding: 0px 0px;
+    resize: none;
+    padding: rem(10) rem(15);
+    height: rem(100);
+    overflow-y: auto;
+    @include scrollbars(rem(5), $blue, transparent);
 }
