@@ -19,17 +19,11 @@ const app = initializeApp({
 const provider = new GoogleAuthProvider();
 const firestore = getFirestore();
 const auth = getAuth();
-// const firestore = initializeFirestore(firebaseApp, {
-//     experimentalForceLongPolling: true, // this line
-//     useFetchStreams: false, // and this line
-// });
 export const Context = createContext(null);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    <React.StrictMode>
-        <Context.Provider value={{ firestore, auth, provider }}>
-            <App />
-        </Context.Provider>
-    </React.StrictMode>
+    <Context.Provider value={{ firestore, auth, provider }}>
+        <App />
+    </Context.Provider>
 );

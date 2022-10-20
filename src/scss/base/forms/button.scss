@@ -2,13 +2,17 @@
 // Снипет (HTML): btn
 
 .btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     border-radius: rem(8);
     @extend %text_03;
     padding: rem(4) rem(8);
     box-shadow: 0px rem(4) rem(0) rgba(70, 96, 135, 0);
     background-color: $blue;
     color: $white;
-    transition: color 0.3s ease 0s, background-color 0.3s ease 0s, box-shadow 0.3s ease 0s, opacity 0.3s ease 0s;
+    transition: color 0.3s ease 0s, background-color 0.3s ease 0s, box-shadow 0.3s ease 0s,
+        opacity 0.3s ease 0s;
     min-height: rem(40);
     min-width: rem(80);
     @media (any-hover: hover) {

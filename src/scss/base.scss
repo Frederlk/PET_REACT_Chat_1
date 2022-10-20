@@ -2,30 +2,6 @@
 // Для подключения/отключения стилей конкретного єлемента формы смотри base/forms/forms.scss
 @import "base/forms/forms";
 
-// Стили попапов
-// @import "base/popup";
-
-// Стили спойлеров
-// @import "base/spollers";
-
-// Стили табов
-// @import "base/tabs";
-
-// Стили слайдеров
-// @import "base/swiper";
-
-// Стили карт
-// @import "base/maps";
-
-// Стили блока "показать еще"
-// @import "base/showmore";
-
-// Стили для полноэкранного блока
-// @import "base/fullscreen";
-
-// Стили для липкого блока
-// @import "base/sticky";
-
 // Стили для отзывчивых картинок (IBG)
 // Сниппет (HTML): ibg (div c картинкой и классами)
 // Сниппет (HTML): ibga (a c картинкой и классами)
@@ -38,10 +14,5 @@
         top: 0;
         left: 0;
         object-fit: cover;
-    }
-}
-[class*="-ibg_contain"] {
-    img {
-        object-fit: contain;
     }
 }

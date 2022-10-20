@@ -1,5 +1,5 @@
 .header {
-    position: fixed;
+    position: absolute;
     width: 100%;
     top: 0;
     left: 0;
@@ -9,6 +9,7 @@
     &__container {
         min-height: rem(60);
         display: flex;
+        justify-content: space-between;
         align-items: center;
         gap: rem(60);
     }
@@ -17,40 +18,8 @@
         @extend %text_01;
     }
 
-    &__menu {
-    }
-
     &__btn {
-    }
-}
-
-.menu {
-    display: flex;
-    align-items: center;
-    flex: 1 1 auto;
-    &__body {
-    }
-
-    &__list {
-        display: flex;
-        align-items: center;
-        gap: rem(20);
-    }
-
-    &__item {
-    }
-
-    &__link {
-        @extend %text_03;
-        transition: color 0.3s ease 0s;
-        @media (any-hover: hover) {
-            &:hover {
-                color: $blue;
-            }
-        }
-    }
-
-    &__icon {
+        min-width: rem(100);
     }
 }
 

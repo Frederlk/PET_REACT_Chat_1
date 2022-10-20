@@ -1,14 +1,10 @@
-.page {
-    @include adaptiveValue("padding-top", 100, 30, 991.98, 479.98, 1);
-    @include adaptiveValue("padding-bottom", 100, 30, 991.98, 479.98, 1);
-}
-
 .login {
     &__container {
         text-align: center;
     }
 
     &__title {
+        padding-top: rem(100);
         @extend %text_01;
         &:not(:last-child) {
             @include adaptiveValue("margin-bottom", 30, 10, 991.98, 479.98, 1);
@@ -112,7 +108,13 @@
     &__container {
         display: flex;
         flex-direction: column;
-        gap: rem(30);
+        max-height: 100vh;
+        max-width: rem(1000);
+        box-sizing: border-box;
+        padding: rem(60) rem(15) rem(30) rem(15);
+        @media (min-width: $tablet) {
+            min-height: rem(400);
+        }
     }
 
     &__title {
@@ -123,10 +125,13 @@
     &__body {
         border-radius: rem(8);
         overflow-y: auto;
-        max-height: rem(500);
+        flex: 1 1 auto;
         @include scrollbars(rem(5), $blue, transparent);
-        margin: 0px rem(-15);
-        padding: 0px rem(15);
+        padding: rem(15);
+        @media (max-width: $pc) {
+            margin: 0px rem(-15);
+            padding: rem(15) rem(10) rem(15) rem(15);
+        }
         .no-message {
             @extend %text_03;
             color: $red;
@@ -158,12 +163,15 @@
 .message {
     background-color: $white;
     overflow: hidden;
-    margin-bottom: rem(10);
     border-radius: rem(16) rem(16) rem(16) 0;
     padding: rem(10) rem(15);
     gap: rem(15);
     width: fit-content;
     display: flex;
+    @include adaptiveValue("max-width", 400, 290);
+    &:not(:last-child) {
+        margin-bottom: rem(10);
+    }
     &_user {
         flex-direction: row-reverse;
         margin-left: auto;
@@ -192,7 +200,7 @@
 
     &__text {
         @extend %text_02;
-        white-space: pre;
+        white-space: pre-line;
         .message_user & {
             color: $white;
         }

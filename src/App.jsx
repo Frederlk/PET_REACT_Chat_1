@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, useLocation } from "react-router-dom";
 import { Suspense, useEffect } from "react";
-import { Header, Footer } from "./_containers";
 import { _AppRouter } from "./_pages";
 import { useContext } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Context } from ".";
 import Loader from "./_components/Loader";
+import Header from "./_components/Header";
 
 const ScrollToTop = () => {
     const { pathname } = useLocation();
@@ -30,7 +30,6 @@ const App = () => {
                     <_AppRouter />
                 </Suspense>
             </main>
-            <Footer />
         </Router>
     );
 };

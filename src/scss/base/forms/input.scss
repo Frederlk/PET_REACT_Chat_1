@@ -15,12 +15,14 @@ textarea {
     @extend %text_02;
     color: rgb(27, 26, 87, 0.5);
     background-color: $white;
-    transition: color 0.3s ease 0s;
+    transition: color 0.3s ease 0s, box-shadow 0.3s ease 0s;
     box-shadow: 0px rem(4) rem(32) rgba(70, 96, 135, 0.2);
     min-height: rem(40);
     border-radius: rem(8);
     &:focus {
+        outline: none;
         color: $mainColor;
+        box-shadow: 0px rem(10) rem(32) rgba(70, 96, 135, 0.3);
     }
 }
 textarea.input {
