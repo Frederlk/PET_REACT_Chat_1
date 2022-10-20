@@ -62,7 +62,7 @@ const Chat = () => {
 
     return (
         <section className="chat">
-            <div className="chat__container">
+            <div data-fullscreen="" className="chat__container">
                 <div ref={bodyRef} className="chat__body">
                     {memoMessages}
                 </div>
